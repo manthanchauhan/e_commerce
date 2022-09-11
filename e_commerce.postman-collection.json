@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "f03b620c-d80a-4e00-9cc1-bfdc22f81391",
+		"name": "e-commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register new user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"davidattenborough\",\n    \"password\": \"boatymcboatface\",\n    \"password_confirm\": \"boatymcboatface\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/auth/accounts/register/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"accounts",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"davidattenborough\",\n    \"password\": \"boatymcboatface\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/auth/token/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY2MzAwNTQ5NCwiaWF0IjoxNjYyOTE5MDk0LCJqdGkiOiIzNjU0OWJlMGQ1NTA0MzEzOTE1MjQ2MDM1OWY3YmViZiIsInVzZXJfaWQiOjF9.2z-bMQuZ-qWxrHv4nKCxIveKsb-rMNUXHFoOc0crQLE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/auth/token/refresh/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product Listing",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYyOTIyMDY0LCJpYXQiOjE2NjI5MjE3NjQsImp0aSI6IjEzZWY2YzVjNWQ0MzRjNTI4YTk4ZTViY2MzOWQ4YTA1IiwidXNlcl9pZCI6MX0.PcIuBGpum91ZI8lE9KYdRw9T78ekSPdP-LX1XQNKW7Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY2MzAwNTQ5NCwiaWF0IjoxNjYyOTE5MDk0LCJqdGkiOiIzNjU0OWJlMGQ1NTA0MzEzOTE1MjQ2MDM1OWY3YmViZiIsInVzZXJfaWQiOjF9.2z-bMQuZ-qWxrHv4nKCxIveKsb-rMNUXHFoOc0crQLE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/skus/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"skus",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYyOTIyNDQ5LCJpYXQiOjE2NjI5MjIxNDksImp0aSI6ImQ5NjBjNjEwZjVjMjRhNjQ5MGZlZTQ2MTUzMjU4OGI0IiwidXNlcl9pZCI6MX0.3iBMXcx-IcScs5Ky6vYBwzEWhppIw0gYmfRnBwKxhzg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"apple-iphone-11-64gb-black\",\n    \"display_name\": \"Apple iPhone 11 (64GB) - Black\",\n    \"price\": 41990,\n    \"quantity_in_stock\": 12000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/skus/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"skus",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYyOTI2MDk2LCJpYXQiOjE2NjI5MjUxOTYsImp0aSI6ImIzMjc1YjI0MTdjNjQxODg5YzVlZDI1NGM2MDNkYjg5IiwidXNlcl9pZCI6MX0.aAT1lIfb1dOc-sENhgjlBq876nrgtUdX-5AwWHY-Q7w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"total_amoun\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/orders/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
