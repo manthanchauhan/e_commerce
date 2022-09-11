@@ -21,13 +21,20 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+from product_inventory.views import SKUViewSet
+
 auth_urls = [
     path('accounts/', include('rest_registration.api.urls')),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]  # todo rename
 
+product_inventory_urls = [
+    path('', SKUViewSet.as_view({'get': 'list', 'put': 'create'}), name='sku_view_set'),
+]
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/auth/',  include(auth_urls)),
+    path('api/v1/skus/', include(product_inventory_urls))
 ]
