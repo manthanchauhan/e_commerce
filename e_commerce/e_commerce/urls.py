@@ -22,6 +22,7 @@ from rest_framework_simplejwt.views import (
 )
 
 from product_inventory.views import SKUViewSet
+from orders.views import OrderViewSet
 
 auth_urls = [
     path('accounts/', include('rest_registration.api.urls')),
@@ -33,8 +34,13 @@ product_inventory_urls = [
     path('', SKUViewSet.as_view({'get': 'list', 'put': 'create'}), name='sku_view_set'),
 ]
 
+order_urls = [
+    path('', OrderViewSet.as_view({'post': 'create'}), name='order viewset'),
+]
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/auth/',  include(auth_urls)),
-    path('api/v1/skus/', include(product_inventory_urls))
+    path('api/v1/skus/', include(product_inventory_urls)),
+    path('api/v1/orders/', include(order_urls)),
 ]
